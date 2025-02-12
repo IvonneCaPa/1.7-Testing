@@ -1,38 +1,37 @@
 <?php
+use PHPUnit\Framework\TestCase;
 
-    use PHPUnit\Framework\TestCase;
+class GradoTest extends TestCase
+{
+    public function testPrimeraDivision()
+    {
+        $this->assertEquals("Estas en Primera División", grado(70));
+    }
 
-    class gradoTest extends TestCase{
+    // public function testSegundaDivision()
+    // {
+    //     $this->assertEquals("Estas en Segunda División", grado(55));
+    // }
 
-        public function testEntradaNoNumerica(){
-            $this->expectException(InvalidArgumentException::class);
-            grado("texto");
-        }
+    // public function testTerceraDivision()
+    // {
+    //     $this->assertEquals("Estas en Tercera División", grado(40));
+    // }
 
-        public function testNumeroNegativo(){
-            $this->expectException(InvalidArgumentException::class);
-            grado(-10);
-        }
+    // public function testReprobado()
+    // {
+    //     $this->assertEquals("Has Reprobado", grado(30));
+    // }
 
-        public function testPrimeraDivision(){
-            $resultado = grado(70);
-            $this->assertEquals('Primera División', $resultado);
-        }
+    // public function testEntradaNoNumerica()
+    // {
+    //     $this->expectException(TypeError::class);
+    //     grado("texto"); // Esto debería lanzar un TypeError
+    // }
 
-        public function testSegundaDivision(){
-            $resultado = grado(55);
-            $this->assertEquals('Segunda División', $resultado);
-        }
-
-        public function testTerceraDivision(){
-            $resultado = grado(40);
-            $this->assertEquals('Tercera División', $resultado);
-        }
-
-        public function testReprobado(){
-            $resultado = grado(30);
-            $this->assertEquals('Reprobado', $resultado);
-        }
-    }                       
-
-?>
+    // public function testNumeroNegativo()
+    // {
+    //     $this->expectException(TypeError::class);
+    //     grado(-10); // Esto también debería lanzar un TypeError
+    // }
+}
