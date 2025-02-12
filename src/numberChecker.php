@@ -11,4 +11,10 @@
 	}
 
     }
+
+    $Num = new NumberChecker(4);
+    echo $Num -> isEven();
+    echo $Num -> isPositive();
+
+
 ?>
